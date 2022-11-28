@@ -12,7 +12,7 @@ namespace Session
     {
         private MySqlConnection con;
         ObservableCollection<SPT> tableSPT;
-        ObservableCollection<Trajet> tableTrajet;
+        ObservableCollection<Trajets> tableTrajet;
         static GestionBD gestionBD = null;
 
         public GestionBD()
@@ -20,7 +20,7 @@ namespace Session
             //this.con = new MySqlConnection("Server=cours.ceget3r.info;Database=session;Uid=2140149;Pwd=2140149;");
             this.con = new MySqlConnection("Server=localhost;Database=final;Uid=root;Pwd=root;");
             tableSPT = new ObservableCollection<SPT>();
-            tableTrajet = new ObservableCollection<Trajet>();
+            tableTrajet = new ObservableCollection<Trajets>();
         }
 
         public static GestionBD getInstance()
@@ -52,8 +52,6 @@ namespace Session
                 SPT c = new SPT()
                 {
                     NoApp = r.GetInt32("noApp"),
-                    Frais = r.GetDouble("frais"),
-                    Vehicule = r.GetString("vehicule"),
                     PourcentageSPT = r.GetDouble("pourcentageSPT")
                 };
                 tableSPT.Add(c);
@@ -67,7 +65,7 @@ namespace Session
 
         //Afficher les données de la table trajet
 
-        public ObservableCollection<Trajet> getTrajet()
+        public ObservableCollection<Trajets> getTrajet()
         {
             tableTrajet.Clear();
 
@@ -81,7 +79,7 @@ namespace Session
             while (r.Read())
             {
 
-                Trajet c = new Trajet()
+                Trajets c = new Trajets()
                 {
                     NoTrajet = r.GetInt32("noTrajet"),
                     HeureDepart = r.GetString("heureDepart"),
@@ -89,8 +87,8 @@ namespace Session
                     VilleDepart = r.GetString("villeDepart"),
                     VilleArrivee = r.GetString("villeArrivee"),
                     Date = r.GetString("date"),
-                    Distance = r.GetString("distance"),
                     Arret = r.GetString("arret"),
+                    Vehicule = r.GetString("vehicule"),
                     NoApp = r.GetInt32("noApp")
                 };
                 tableTrajet.Add(c);

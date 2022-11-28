@@ -6,18 +6,16 @@ using System.Threading.Tasks;
 
 namespace Session
 {
-    internal class Trajet
+    internal class Trajets
     {
-        internal class Trajet
-        {
             int noTrajet;
             string heureDepart;
             string heureArrivee;
             string villeDepart;
             string villeArrivee;
             string date;
-            string distance;
             string arret;
+            string vehicule;
             int noApp;
 
             public int NoTrajet { get => noTrajet; set => noTrajet = value; }
@@ -26,8 +24,8 @@ namespace Session
             public string VilleDepart { get => villeDepart; set => villeDepart = value; }
             public string VilleArrivee { get => villeArrivee; set => villeArrivee = value; }
             public string Date { get => date; set => date = value; }
-            public string Distance { get => distance; set => distance = value; }
             public string Arret { get => arret; set => arret = value; }
+            public string Vehicule { get => vehicule; set => vehicule = value; }
             public int NoApp { get => noApp; set => noApp = value; }
 
             public override string ToString()
@@ -38,7 +36,7 @@ namespace Session
                     + villeDepart + "\n"
                     + villeArrivee + "\n"
                     + date + "\n"
-                    + distance + "\n"
+                    + vehicule + "\n"
                     + noApp;
             }
         }

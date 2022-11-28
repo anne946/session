@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "wtf (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "wtf (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
